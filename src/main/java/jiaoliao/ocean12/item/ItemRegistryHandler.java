@@ -25,6 +25,13 @@ public class ItemRegistryHandler
     @SideOnly(Side.CLIENT)
     public static void onModelRegistry(ModelRegistryEvent event)
     {
-        ModelLoader.setCustomModelResourceLocation(CLAM_SHELL, 0, new ModelResourceLocation(CLAM_SHELL.getRegistryName(), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(CLAM_SHELL, 0,
+                new ModelResourceLocation(CLAM_SHELL.getRegistryName(), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(CLAM_SHELL, 1,
+                new ModelResourceLocation(CLAM_SHELL.getSubtypeName("1"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(CLAM_SHELL, 2,
+                new ModelResourceLocation(CLAM_SHELL.getSubtypeName("2"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(CLAM_SHELL, 3,
+                new ModelResourceLocation(CLAM_SHELL.getSubtypeName("3"), "inventory"));
     }
 }

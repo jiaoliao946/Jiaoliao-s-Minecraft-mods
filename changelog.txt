@@ -1,1 +1,7 @@
 2023.10.10   First push to GitHub.
+
+2023.10.12   Add my first item.
+
+2023.10.13   Add subtype to my first item but failed.
+
+
