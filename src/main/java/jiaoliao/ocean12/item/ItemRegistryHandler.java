@@ -1,37 +1,28 @@
 package jiaoliao.ocean12.item;
 
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
-import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent.Register;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.registries.IForgeRegistry;
 
 @EventBusSubscriber
 public class ItemRegistryHandler
 {
     public static final ItemClamShell CLAM_SHELL = new ItemClamShell();
     @SubscribeEvent
-    public static void onRegistry(Register<Item> event)
+    public static void onRegistry(Register<Item> event)     //Register
     {
-        IForgeRegistry<Item> registry = event.getRegistry();
-        registry.register(CLAM_SHELL);
+        event.getRegistry().registerAll(     //Register all item at once
+                CLAM_SHELL     //Register clam_shell
+        );
     }
     @SubscribeEvent
-    @SideOnly(Side.CLIENT)
-    public static void onModelRegistry(ModelRegistryEvent event)
+    @SideOnly(Side.CLIENT)     //Only for client
+    public static void onModelRegistry(ModelRegistryEvent event)     //Set resource location
     {
-        ModelLoader.setCustomModelResourceLocation(CLAM_SHELL, 0,
-                new ModelResourceLocation(CLAM_SHELL.getRegistryName(), "inventory"));
-        ModelLoader.setCustomModelResourceLocation(CLAM_SHELL, 1,
-                new ModelResourceLocation(CLAM_SHELL.getSubtypeName("1"), "inventory"));
-        ModelLoader.setCustomModelResourceLocation(CLAM_SHELL, 2,
-                new ModelResourceLocation(CLAM_SHELL.getSubtypeName("2"), "inventory"));
-        ModelLoader.setCustomModelResourceLocation(CLAM_SHELL, 3,
-                new ModelResourceLocation(CLAM_SHELL.getSubtypeName("3"), "inventory"));
+        CLAM_SHELL.setSubtypeResourceLocation(3);     //Set resource location to clam_shell
     }
 }
