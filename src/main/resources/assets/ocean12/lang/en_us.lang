@@ -2,3 +2,7 @@ item.ocean12.clamShell.blue.name=Blue Clam Shell
 item.ocean12.clamShell.green.name=Green Clam Shell
 item.ocean12.clamShell.yellow.name=Yellow Clam Shell
 item.ocean12.clamShell.red.name=Red Clam Shell
+
+
+
+tile.ocean12.airCompressor.name=Manually Operated Air Compressor

@@ -8,14 +8,11 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 @EventBusSubscriber
-public class Welcome
-{
+public class Welcome {
     @SubscribeEvent
-    public static void onPlayerJoin(EntityJoinWorldEvent event)
-    {
+    public static void onPlayerJoin(EntityJoinWorldEvent event) {
         Entity entity = event.getEntity();
-        if (entity instanceof EntityPlayer)
-        {
+        if (entity instanceof EntityPlayer) {
             String message = "Welcome to jiaoliao's mod, " + entity.getName() + "!";
             TextComponentString text = new TextComponentString(message);
             entity.sendMessage(text);
