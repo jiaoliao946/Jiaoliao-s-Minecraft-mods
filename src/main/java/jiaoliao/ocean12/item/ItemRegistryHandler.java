@@ -17,17 +17,17 @@ import java.util.Objects;
 @EventBusSubscriber
 public class ItemRegistryHandler {
     public static final ItemClamShell CLAM_SHELL = new ItemClamShell();
-    public static final ItemBlock ITEM_AIR_COMPRESSOR = new
-            MyItemBlock(BlockRegistryHandler.BLOCK_AIR_COMPRESSOR);     //Define item-block
+    public static final ItemBlock ITEM_STRANGE_SAND = new
+            MyItemBlock(BlockRegistryHandler.BLOCK_STRANGE_SAND);     //Define item-block
     @SubscribeEvent
     public static void onRegistry(Register<Item> event) {     //Register
         event.getRegistry().registerAll(     //Register all item at once
                 CLAM_SHELL,      //Register clam_shell
-                ITEM_AIR_COMPRESSOR
+                ITEM_STRANGE_SAND
         );
     }
     @SideOnly(Side.CLIENT)
-    private static void registerModel(Item item) {     //Simplify the registry of normal item's model
+    private static void setResourceLocation(Item item) {     //Simplify the registry of normal item's model
         ModelLoader.setCustomModelResourceLocation(item, 0,
                 new ModelResourceLocation(Objects.requireNonNull(item.getRegistryName()), "inventory"));
     }
@@ -35,6 +35,6 @@ public class ItemRegistryHandler {
     @SideOnly(Side.CLIENT)     //Only for client
     public static void onModelRegistry(ModelRegistryEvent event) {     //Set resource location
         CLAM_SHELL.setSubtypeResourceLocation(3);     //Set resource location to clam_shell
-        registerModel(ITEM_AIR_COMPRESSOR);
+        setResourceLocation(ITEM_STRANGE_SAND);
     }
 }

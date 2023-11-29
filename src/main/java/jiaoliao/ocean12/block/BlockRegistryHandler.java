@@ -7,11 +7,11 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 @Mod.EventBusSubscriber
 public class BlockRegistryHandler {
-    public static final BlockAirCompressor BLOCK_AIR_COMPRESSOR = new BlockAirCompressor();
+    public static final BlockStrangeSand BLOCK_STRANGE_SAND = new BlockStrangeSand();
     @SubscribeEvent
     public static void onRegistry(Register<Block> event) {
         event.getRegistry().registerAll(
-                BLOCK_AIR_COMPRESSOR
+                BLOCK_STRANGE_SAND
         );
     }
 }
